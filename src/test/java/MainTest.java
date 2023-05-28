@@ -13,15 +13,12 @@ public class MainTest {
 
     @BeforeAll
     public static void beforeAll() {
-        list = Arrays.asList(1, 2, 2, 3, 4, 5, 4, 3, 1, 4, 6, 8);
+        list = Arrays.asList(1, 3, 4, 5, 1, 5, 4);
         resultMap = new HashMap<>();
         resultMap.put(1, 2);
-        resultMap.put(2, 2);
-        resultMap.put(3, 2);
-        resultMap.put(4, 3);
-        resultMap.put(5, 1);
-        resultMap.put(6, 1);
-        resultMap.put(8, 1);
+        resultMap.put(3, 1);
+        resultMap.put(4, 2);
+        resultMap.put(5, 2);
     }
 
     @Test
