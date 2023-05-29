@@ -41,6 +41,50 @@
             <version>${junit.platform.version}</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.codehaus.groovy</groupId>
+            <artifactId>groovy-all</artifactId>
+            <version>2.4.21</version>
+        </dependency>
     </dependencies>
+
+    <build>
+      <plugins>
+          <plugin>
+              <groupId>org.codehaus.gmaven</groupId>
+              <artifactId>gmaven-plugin</artifactId>
+              <version>1.5</version>
+              <executions>
+                  <execution>
+                      <configuration>
+                          <providerSelection>2.0</providerSelection>
+                      </configuration>
+                      <goals>
+                          <goal>generateStubs</goal>
+                          <goal>compile</goal>
+                          <goal>generateTestStubs</goal>
+                          <goal>testCompile</goal>
+                      </goals>
+                  </execution>
+              </executions>
+          </plugin>
+          <plugin>
+              <artifactId>maven-surefire-plugin</artifactId>
+              <version>2.19.1</version>
+              <dependencies>
+                  <dependency>
+                      <groupId>org.junit.platform</groupId>
+                      <artifactId>junit-platform-surefire-provider</artifactId>
+                      <version>1.0.3</version>
+                  </dependency>
+                  <dependency>
+                      <groupId>org.junit.jupiter</groupId>
+                      <artifactId>junit-jupiter-engine</artifactId>
+                      <version>5.0.3</version>
+                  </dependency>
+              </dependencies>
+          </plugin>
+      </plugins>
+    </build>
 
 </project>

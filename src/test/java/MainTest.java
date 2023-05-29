@@ -8,7 +8,6 @@ import java.util.*;
 public class MainTest {
     private static List<Integer> list;
     private Map<Integer, Integer> map;
-
     private static Map<Integer, Integer> resultMap;
 
     @BeforeAll
@@ -37,7 +36,7 @@ public class MainTest {
 
     @Test
     @DisplayName("Преобразование списка")
-    public void arrayToMap() {
+    public void arrayToMapTest() {
         map = Main.arrayToMap(list);
         Assertions.assertEquals(map.size(), resultMap.size());
         Assertions.assertEquals(map, resultMap);
@@ -45,7 +44,7 @@ public class MainTest {
 
     @Test
     @DisplayName("Преобразование списка forEach")
-    public void arrayToMapForEach() {
+    public void arrayToMapForEachTest() {
         map = Main.arrayToMapForEach(list);
         Assertions.assertEquals(map.size(), resultMap.size());
         Assertions.assertEquals(map, resultMap);
